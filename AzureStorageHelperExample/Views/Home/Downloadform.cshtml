@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("Download", "home", FormMethod.Post))
+ {
+
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Download</h4>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="imageFile">Download file url</label>
+            <div class="col-md-10">
+                <input type="text" name="theFilePath"  class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Download" class="btn btn-default" />
+            </div>
+
+        </div>
+    </div>
+
+ }
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
